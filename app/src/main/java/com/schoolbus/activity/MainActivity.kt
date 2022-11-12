@@ -21,6 +21,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
+import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.github.florent37.runtimepermission.kotlin.askPermission
@@ -285,6 +286,18 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 planRoute(departureCoordinate, destinationCoordinate)
             },2000)
 
+        }, onHideMap = {
+            runOnUiThread {
+                if (binding.clMap.isVisible()){
+                    binding.clMap.gone()
+                }
+            }
+        }, onShowMap = {
+            runOnUiThread {
+                if (!binding.clMap.isVisible()){
+                    binding.clMap.visible()
+                }
+            }
         }),"Android")
     }
 

@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="gone"
-            android:layout_marginStart="@dimen/_40sdp">
+            android:layout_marginStart="@dimen/_80sdp">
 
             <androidx.fragment.app.FragmentContainerView
                 xmlns:tomtom="http://schemas.android.com/apk/res-auto"
